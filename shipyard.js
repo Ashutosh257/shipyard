@@ -215,7 +215,8 @@ function buildQue(shipName, quantity) {
 
 window.onload = function() {
     console.log(window.location.pathname)
-    if (window.location.pathname.endsWith('/shipyards.html')) {
+
+    if (window.location.pathname.toLowerCase().includes('shipyards')) {
         createShipDropdown();
         displayUserCredits();
 

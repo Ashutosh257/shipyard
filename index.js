@@ -206,7 +206,7 @@ function populateDropdown(dropdownId, options) {
 
 
 // if (window.location.pathname === '/addShips.html') {
-if (window.location.pathname.endsWith('/addShips.html')) {
+if (window.location.pathname.toLowerCase().includes('addships')) {
     populateDropdown('ship-addons-1', Object.keys(addons));
     populateDropdown('ship-addons-2', Object.keys(addons));
     populateDropdown('ship-addons-3', Object.keys(addons));
@@ -288,12 +288,12 @@ function loadShipsFromFirebase() {
             ship.id = key;
             ships.push(ship);
 
-            if (window.location.pathname.endsWith('/addShips.html')) {
+            if (window.location.pathname.toLowerCase().includes('addships')) {
             // if (window.location.pathname === '/addShips.html') {
                 displayShipStats(ship);
             }
             
-            if (window.location.pathname.endsWith('/shiplist.html')) {
+            if (window.location.pathname.toLowerCase().includes('shiplist')) {
             // if (window.location.pathname === '/shiplist.html') {
                 displayShipStatsLite();
             }
@@ -316,7 +316,7 @@ let sortOrder = 'type';
 let sortOrderElement = document.getElementById('sort-order');
 if (sortOrderElement) {
     sortOrderElement.addEventListener('change', function() {
-        if (window.location.pathname.endsWith('/shiplist.html')) {
+        if (window.location.pathname.toLowerCase().includes('shiplist')) {
         // if (window.location.pathname === '/shiplist.html') {
             sortOrder = this.value;
             displayShipStatsLite();
@@ -331,7 +331,7 @@ if (sortOrderElement) {
 
 function displayShipStatsLite() {
     // if (window.location.pathname !== '/shiplist.html') {
-    if (!window.location.pathname.endsWith('/shiplist.html')) {
+    if (!window.location.pathname.toLowerCase().includes('shiplist')) {
         return;
     }
     const shipStatsDiv = document.getElementById('ship-stats-lite');
