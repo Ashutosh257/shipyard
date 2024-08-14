@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ship List</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+<body>
+    <h1>Ships List</h1>
+    <a href="shiplist.html">View Ship List</a>
+    <a href="shipyards.html">Shipyards</a>
+    <a href="addShips.html">Adding Ships</a>
+    <a href="index.html">index</a>
+    
+    <select id="sort-order">
+        <option value="type">Sort by Type</option>
+        <option value="manufacturer">Sort by Manufacturer</option>
+        <option value="finalCost">Sort by Cost</option>
+    </select>
+    
+    <div id='ship-stats-lite'></div>
+
+
+    <!-- Include your JavaScript files here -->
+    <script src="./shipyard.js" type="module"></script>
+    <script src="./shipTypes.js" type="module"></script>
+    <script src="./addons.js" type="module"></script>
+    <script src="./index.js" type="module"></script>
+</body>
+</html>
